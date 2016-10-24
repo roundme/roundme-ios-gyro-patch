@@ -12,7 +12,7 @@ $ npm install roundme-ios-gyro-patch
 
 ## Usage
 
-for static html page, you have to just load script to page
+for static html page, you have to just load script on the page
 
 ```js
 var roundmeIosGyroPatch = require('roundme-ios-gyro-patch');
