@@ -17,8 +17,8 @@
    * With iOS 9.2 WebKit now blocks deviceorientation and devicemotion event access
    * from cross-origin iframes
    **/
-  function roundmeIosGyroPatch () {
-    var host = 'round.me';
+  function roundmeIosGyroPatch (h) {
+    var host = h || 'roundme.com';
 
     function iOSversion () {
       if (/iP(hone|od|ad)/.test(navigator.platform)) {
