@@ -19,6 +19,7 @@
    **/
   function roundmeIosGyroPatch (h) {
     var host = h || 'roundme.com';
+    var iframes;
 
     function iOSversion () {
       if (/iP(hone|od|ad)/.test(navigator.platform)) {
@@ -54,13 +55,11 @@
       });
     }
 
-    function handler (e) {
-      handleMotionEvent(e, iframes);
-    }
-
     if (iOSversion() >= 9.2) {
-      var iframes = getIframes();
-      window.addEventListener("devicemotion", handler, true);
+      iframes = getIframes();
+      window.addEventListener("devicemotion", function (e) {
+        handleMotionEvent(e, iframes);
+      }, true);
     }
   }
 
